@@ -12,6 +12,11 @@ RUN apk add tzdata
 RUN cp /usr/share/zoneinfo/America/Toronto /etc/localtime ; echo "America/Toronto" > /etc/timezone ; date
 RUN apk del tzdata
 
+# SSMTP (to be able to send emails)
+RUN apk --no-cache add ssmtp
+COPY config/ssmtp.conf /etc/ssmtp/ssmtp.conf
+RUN echo "hostname=`hostname`.home.danslereseau.com" >> /etc/ssmtp/ssmtp.conf
+
 # Configure nginx
 COPY config/nginx.conf /etc/nginx/nginx.conf
 
