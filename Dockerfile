@@ -7,8 +7,9 @@ RUN apk --no-cache add php7 php7-fpm php7-pdo php7-pdo_mysql php7-mysqli php7-js
     php7-zlib php7-xml php7-phar php7-intl php7-dom php7-xmlreader php7-ctype php7-session \
     php7-mbstring php7-gd php7-simplexml php7-pecl-xdebug nginx supervisor curl
 
-RUN apk update && apk add --no-cache handbrake --repository="http://dl-cdn.alpinelinux.org/alpine/edge/testing"
-RUN apk update && apk add --no-cache mediainfo ffmpeg
+RUN apk update && apk add --no-cache mbedtls libdav1d libcrypto3 glslang-libs --repository="https://dl-cdn.alpinelinux.org/alpine/edge/main"
+RUN apk update && apk add --no-cache ffmpeg ffmpeg-libavcodec ffmpeg-libavfilter --repository="https://dl-cdn.alpinelinux.org/alpine/edge/community"
+RUN apk update && apk add --no-cache mediainfo handbrake --repository="https://dl-cdn.alpinelinux.org/alpine/edge/testing"
 
 # Timezone
 RUN apk add tzdata
