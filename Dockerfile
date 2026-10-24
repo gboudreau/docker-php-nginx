@@ -1,6 +1,6 @@
 FROM alpine:3.15
 LABEL Maintainer="Tim de Pater <code@trafex.nl>" \
-      Description="Lightweight container with Nginx 1.16 & PHP-FPM 7.3 based on Alpine Linux."
+      Description="Lightweight container with Nginx 1.16 & PHP-FPM 7.4 based on Alpine Linux."
 
 # Install packages
 RUN apk --no-cache add php7 php7-fpm php7-pdo php7-pdo_mysql php7-mysqli php7-json php7-openssl php7-curl \
